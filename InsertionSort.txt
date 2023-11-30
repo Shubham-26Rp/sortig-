@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Test {
+	public static void main(String[] args) {
+		int i, j, small;
+		int[] arr = { 12, 5, 72, -1, 36 };
+		for (i = 1; i < arr.length; i++) {
+			small = arr[i];
+			for (j = i - 1; j > -1 && arr[j] > small; j--) {
+				arr[j + 1] = arr[j];
+			}
+			arr[j + 1] = small;
+		}
+		
+		System.out.println("Array Elements After Insertion sort: ");
+		for (i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
+
+
+
+Note:- Comparison in reverse order in Insertion sort
+1)variable i will start from index 1 and j from i-1
+2)small will store the value of arr[i]
+3)comapre arr[j] and small
+4)if(j>-1 && arr[j]>small) then replace arr[j] element at arr[j+1] position
+5)decrement j--
+6)when conndition (j>-1 && arr[j]>small) fail then replace small at arr[j+1]
